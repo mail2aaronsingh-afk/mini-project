@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Cloud ERP Management System</title>
+    <link rel="stylesheet" href="first.css">
+    <script src="first.js"></script>
+</head>
+<body>
+
+
+<div class="sidebar">
+    <h2>☁ Cloud ERP</h2>
+
+    <ul>
+        <li onclick="showSection('dashboard')">Dashboard</li>
+        <li onclick="showSection('employees')">Employees</li>
+        <li onclick="showSection('inventory')">Inventory</li>
+        <li onclick="showSection('sales')">Sales</li>
+        <li onclick="showSection('purchase')">Purchase</li>
+    </ul>
+</div>
+
+<div class="main">
+
+    <header>
+        <h2>Cloud ERP Dashboard</h2>
+        <span>Admin Panel</span>
+    </header>
+
+    
+    <section id="dashboard" class="section">
+        <h2>Dashboard Overview</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Employees</h3>
+                <p id="employeeCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Products</h3>
+                <p id="productCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Sales</h3>
+                <p id="salesCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Purchase Orders</h3>
+                <p id="purchaseCount">0</p>
+            </div>
+        </div>
+
+        <h2>Welcome to Cloud ERP</h2>
+        <p>
+            Manage your business operations easily
+            through one integrated platform.
+        </p>
+    </section>
+
+    
+    <section id="employees" class="section hidden">
+        <h2>Employee Management</h2>
+
+        <input type="text" id="empName"
+               placeholder="Employee Name">
+
+        <input type="text" id="empRole"
+               placeholder="Employee Designation">
+
+        <button onclick="addEmployee()">
+            
+        </button>
+
+        <input type="text" id="empSearch"
+               placeholder="Search employees..."
+               oninput="renderEmployees()">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="employeeList"></tbody>
+        </table>
+    </section>
+
+
+    <section id="inventory" class="section hidden">
+        <h2>Inventory Management</h2>
+
+        <input type="text" id="productName"
+               placeholder="Product Name">
+
+        <input type="number" id="productQty"
+               placeholder="Quantity">
+
+        <button onclick="addProduct()">
+        
+        </button>
+
+        <input type="text" id="productSearch"
+               placeholder="Search products..."
+               oninput="renderProducts()">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+        </table>
+    </section>
+
+    
+    <section id="sales" class="section hidden">
+        <h2>Sales Management</h2>
+
+        <input type="number" id="saleAmount"
+               placeholder="Enter Sales Amount">
+
+        <button onclick="addSale()">
+            Add Sale
+        </button>
+
+        <h3>Total Sales: ₹<span id="salesTotal">0</span></h3>
+    </section>
+
+    
+    <section id="purchase" class="section hidden">
+        <h2>Purchase Management</h2>
+
+        <input type="text" id="purchaseName"
+               placeholder="Purchase Item">
+
+        <input type="number" id="purchaseQty"
+               placeholder="Quantity">
+
+        <button onclick="addPurchase()">
+            
+        </button>
+
+        <ul id="purchaseList"></ul>
+    </section>
+
+</div>
+
+<script src="first.js"></script>
+
+</body>
+
+</html>
